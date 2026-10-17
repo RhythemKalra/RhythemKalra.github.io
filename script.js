@@ -263,85 +263,12 @@ copyBtn.addEventListener("click", async () => {
 document.getElementById("year").textContent = new Date().getFullYear();
 
 // =====================================================================
-// The "rhythm" layer: sound waves, equalizer, parallax name, cursor ring
+// The "rhythm" layer: equalizer, parallax name, photo collage, cursor ring
 // =====================================================================
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 // equalizer next to the logo toggles dance mode too
 document.getElementById("eqBtn").addEventListener("click", toggleDance);
-
-// ---------- sound-wave lines in the background ----------
-const canvas = document.getElementById("waves");
-const ctx = canvas.getContext("2d");
-let W = 0, H = 0, dpr = 1;
-const mouse = { x: -9999, y: -9999, tx: -9999, ty: -9999 };
-let colors = [];
-
-function readColors() {
-  const cs = getComputedStyle(root);
-  colors = ["--accent", "--accent-2", "--accent-3"].map((v) => cs.getPropertyValue(v).trim());
-}
-function resize() {
-  dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-  W = window.innerWidth;
-  H = window.innerHeight;
-  canvas.width = W * dpr;
-  canvas.height = H * dpr;
-  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-}
-readColors();
-resize();
-window.addEventListener("resize", resize);
-document.getElementById("themeToggle").addEventListener("click", () => requestAnimationFrame(readColors));
-window.addEventListener("pointermove", (e) => { mouse.tx = e.clientX; mouse.ty = e.clientY; });
-window.addEventListener("pointerleave", () => { mouse.tx = -9999; mouse.ty = -9999; });
-
-const LINES = 7;
-function drawWaves(time) {
-  const t = time / 1000;
-  const dancing = root.classList.contains("dancing");
-  const energy = dancing ? 2.6 : 1;
-  const paper = root.dataset.theme === "paper";
-  mouse.x += (mouse.tx - mouse.x) * 0.08;
-  mouse.y += (mouse.ty - mouse.y) * 0.08;
-  const scrollPhase = window.scrollY * 0.002;
-
-  ctx.clearRect(0, 0, W, H);
-  for (let i = 0; i < LINES; i++) {
-    const baseY = H * (0.2 + i * 0.12);
-    const amp = (18 + i * 7) * energy;
-    const freq = 0.0035 + i * 0.0006;
-    const speed = (0.35 + i * 0.08) * (dancing ? 3 : 1);
-    const color = colors[i % 3];
-
-    ctx.beginPath();
-    for (let x = -10; x <= W + 10; x += 10) {
-      let y = baseY
-        + Math.sin(x * freq + t * speed + i * 1.7 + scrollPhase) * amp
-        + Math.sin(x * freq * 2.3 - t * speed * 0.7 + i) * amp * 0.35;
-      // the line bends towards the cursor when it's close
-      const dx = x - mouse.x;
-      const pull = Math.exp(-(dx * dx) / 18000);
-      const dy = mouse.y - y;
-      if (Math.abs(dy) < 220) y += dy * pull * 0.45;
-      x === -10 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-    }
-    ctx.strokeStyle = color;
-    // a wide soft pass for glow, then a crisp line on top
-    ctx.globalAlpha = paper ? 0.06 : 0.1;
-    ctx.lineWidth = 7;
-    ctx.stroke();
-    ctx.globalAlpha = (paper ? 0.4 : 0.55) - i * 0.04;
-    ctx.lineWidth = i === 2 ? 2 : 1.3;
-    ctx.stroke();
-  }
-  ctx.globalAlpha = 1;
-}
-function loop(time) {
-  if (!document.hidden) drawWaves(time);
-  requestAnimationFrame(loop);
-}
-reduceMotion ? drawWaves(0) : requestAnimationFrame(loop);
 
 // ---------- giant outlined name drifts sideways as you scroll ----------
 const bigname = document.getElementById("bigname");
@@ -367,6 +294,8 @@ if (finePointer && !reduceMotion) {
     [".flip", "flip"],
     ["#danceBtn, #eqBtn", "dance"],
     [".vinyl", "scratch"],
+    ["[data-shuffle]", "shuffle"],
+    [".frame", "♥"],
   ];
   document.addEventListener("pointerover", (e) => {
     const hit = hints.find(([sel]) => e.target.closest(sel));
@@ -384,4 +313,15 @@ vinyl.addEventListener("click", () => {
     [{ transform: "rotate(0deg)" }, { transform: "rotate(-200deg)" }, { transform: "rotate(40deg)" }, { transform: "rotate(0deg)" }],
     { duration: 900, easing: "cubic-bezier(.3,.7,.3,1)" }
   );
+});
+
+// ---------- hero photos: click to shuffle which one is on top ----------
+const art = document.getElementById("heroArt");
+art.querySelectorAll("[data-shuffle]").forEach((photo) => {
+  photo.addEventListener("click", () => {
+    const front = art.querySelector(".pola-front");
+    const back = art.querySelector(".pola-back");
+    front.classList.replace("pola-front", "pola-back");
+    back.classList.replace("pola-back", "pola-front");
+  });
 });

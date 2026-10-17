@@ -10,7 +10,7 @@
   --bg-soft: #171511;
   --card: rgba(255, 248, 235, 0.035);
   --line: rgba(237, 230, 214, 0.1);
-  --grid: rgba(237, 230, 214, 0.045);
+  --grid: rgba(237, 230, 214, 0.03);
   --text: #ede6d6;
   --muted: #9a9282;
   --accent: #f2b14a;
@@ -811,8 +811,8 @@ kbd {
    giant outlined name and a cursor that talks.
    =========================================================== */
 
-:root, :root[data-theme="ink"] { --accent-3: #ff5d8f; --blend: screen; --aurora-o: 0.85; }
-:root[data-theme="paper"] { --accent-3: #db2777; --blend: multiply; --aurora-o: 0.35; }
+:root, :root[data-theme="ink"] { --accent-3: #ff5d8f; --blend: screen; --aurora-o: 0.5; }
+:root[data-theme="paper"] { --accent-3: #db2777; --blend: multiply; --aurora-o: 0.28; }
 
 /* drifting colour blobs */
 .aurora { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
@@ -834,8 +834,6 @@ kbd {
   100% { transform: translate(-6vw, 14vh) scale(0.95); }
 }
 
-/* sound-wave canvas */
-.waves { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
 
 /* equalizer next to the logo */
 .brand { display: flex; align-items: center; gap: 14px; }
@@ -968,4 +966,185 @@ h2 em {
     margin-top: 36px;
   }
   .bigname { font-size: 34vw; bottom: 0; }
+}
+
+
+/* ===========================================================
+   PHOTOS & FILM: polaroid collage, taped snapshot, film strip
+   =========================================================== */
+
+main { overflow-x: clip; }
+
+/* soft dark edges, like an old lens */
+.vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(ellipse at 50% 40%, transparent 50%, rgba(0, 0, 0, 0.5) 100%);
+}
+[data-theme="paper"] .vignette { background: radial-gradient(ellipse at 50% 40%, transparent 55%, rgba(90, 60, 20, 0.14) 100%); }
+
+/* hero becomes two columns: words + photos */
+@media (min-width: 861px) {
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(24px, 4vw, 64px);
+  }
+}
+.hero h1 { font-size: clamp(42px, 5.6vw, 82px); max-width: none; }
+
+.hero-art {
+  position: relative;
+  height: clamp(440px, 42vw, 580px);
+}
+.hero-art .vinyl {
+  position: absolute;
+  top: 0;
+  right: -10%;
+  bottom: auto;
+  width: 66%;
+  margin: 0;
+  z-index: 0;
+}
+.pola {
+  position: absolute;
+  margin: 0;
+  cursor: pointer;
+  transition: transform 0.7s cubic-bezier(.3, 1.4, .4, 1), top 0.7s cubic-bezier(.3, 1.2, .4, 1), left 0.7s, right 0.7s;
+  filter: drop-shadow(0 28px 34px rgba(0, 0, 0, 0.45));
+}
+.pola img { display: block; width: 100%; height: auto; }
+.pola:not(.instax) {
+  background: #f6f1e7;
+  padding: 10px 10px 42px;
+}
+.pola:not(.instax) img { aspect-ratio: 3 / 4; object-fit: cover; object-position: 50% 30%; }
+.pola figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6px;
+  text-align: center;
+  font: 600 22px "Caveat", cursive;
+  color: #2a2520;
+}
+.instax img { border-radius: 6px; }
+.pola-back { width: 50%; left: 2%; top: 12%; transform: rotate(-8deg); z-index: 1; }
+.pola-front { width: 58%; left: 36%; top: 30%; transform: rotate(6deg); z-index: 2; }
+.hero-art:hover .pola-back { transform: rotate(-11deg) translate(-14px, -10px); }
+.hero-art:hover .pola-front { transform: rotate(8deg) translate(12px, 6px); }
+
+.tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  width: 92px;
+  height: 26px;
+  z-index: 3;
+  background: rgba(250, 236, 200, 0.6);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+  transform: translateX(-50%) rotate(-5deg);
+  /* torn tape ends */
+  clip-path: polygon(3% 0, 97% 4%, 100% 30%, 96% 55%, 100% 80%, 96% 100%, 4% 96%, 0 70%, 4% 45%, 0 20%);
+}
+.tape-b { background: rgba(167, 139, 250, 0.55); transform: translateX(-50%) rotate(4deg); }
+.tape-c { background: rgba(255, 93, 143, 0.5); }
+
+.art-note { position: absolute; left: 4%; bottom: -4px; z-index: 3; }
+
+/* About: a taped snapshot above the index card */
+.about-side { display: flex; flex-direction: column; align-items: center; gap: 34px; }
+.about-side .index-card { width: 100%; }
+.snap {
+  position: relative;
+  width: 210px;
+  margin: 0;
+  padding: 10px 10px 38px;
+  background: #f6f1e7;
+  transform: rotate(-4deg);
+  box-shadow: 0 24px 40px -22px rgba(0, 0, 0, 0.6);
+  transition: transform 0.5s cubic-bezier(.3, 1.4, .4, 1);
+}
+.snap:hover { transform: rotate(1deg) scale(1.04); }
+.snap img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 45%; }
+.snap figcaption { position: absolute; left: 0; right: 0; bottom: 6px; text-align: center; font: 600 22px "Caveat", cursive; color: #2a2520; }
+
+/* film strip that rolls across the page */
+.film {
+  position: relative;
+  width: 100vw;
+  margin: 10px calc(50% - 50vw) 0;
+  padding: 30px 0;
+  background: #0e0d0b;
+  transform: rotate(-2deg);
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+.film::before,
+.film::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 11px;
+  background: repeating-linear-gradient(90deg, transparent 0 12px, rgba(246, 241, 231, 0.85) 12px 24px);
+  border-radius: 2px;
+  z-index: 1;
+}
+.film::before { top: 10px; }
+.film::after { bottom: 10px; }
+.film-track {
+  display: flex;
+  gap: 14px;
+  width: max-content;
+  padding-left: 14px;
+  animation: ticker 55s linear infinite;
+}
+.film:hover .film-track { animation-play-state: paused; }
+.frame { flex: none; width: 210px; margin: 0; }
+.frame img {
+  display: block;
+  width: 210px;
+  height: 270px;
+  object-fit: cover;
+  object-position: 50% 30%;
+  border-radius: 3px;
+  filter: sepia(0.28) saturate(0.85) contrast(1.06) brightness(0.95);
+  transition: filter 0.4s, transform 0.4s;
+}
+.frame:hover img { filter: none; transform: scale(1.03); }
+.frame figcaption {
+  display: flex;
+  justify-content: space-between;
+  padding: 7px 2px 0;
+  font: 500 10px "JetBrains Mono", monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #f2b14a;
+}
+.film-note { font-size: 12px; color: var(--muted); text-align: right; margin: 22px 0 48px; }
+.film-note + .hint { margin-top: 0; }
+
+/* the travelling card shows Paris on its back */
+.flip-back.photo-back {
+  justify-content: flex-end;
+  color: #fff;
+  font-size: 22px;
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0) 65%),
+    url("images/paris.jpg") center 35% / cover;
+}
+
+@media (max-width: 860px) {
+  .hero-art { width: min(360px, 100%); height: 430px; margin: 40px auto 0; }
+  .hero-art .vinyl { width: 62%; right: -6%; top: 0; }
+  .snap { width: 190px; }
+}
+@media (max-width: 480px) {
+  .frame, .frame img { width: 160px; }
+  .frame img { height: 210px; }
+  .hero-art { height: 390px; }
 }

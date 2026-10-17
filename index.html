@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
   <script>
     // Apply the saved theme before the page paints, so it never flashes.
     document.documentElement.classList.add("js");
@@ -17,8 +17,8 @@
   </script>
 </head>
 <body>
+  <div class="vignette" aria-hidden="true"></div>
   <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
-  <canvas class="waves" id="waves" aria-hidden="true"></canvas>
   <div class="glow" aria-hidden="true"></div>
   <div class="cursor-ring" id="cursorRing" aria-hidden="true"><span class="cursor-text"></span></div>
   <div class="progress" id="progress" aria-hidden="true"></div>
@@ -44,41 +44,56 @@
     <!-- HERO -->
     <section class="hero">
       <div class="bigname" id="bigname" aria-hidden="true">rhythem</div>
-      <div class="vinyl" id="vinyl" aria-hidden="true">
-        <svg viewBox="0 0 200 200" width="200" height="200" style="max-width:100%;height:auto">
-          <defs><path id="ring" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs>
-          <circle cx="100" cy="100" r="98" class="v-disc"/>
-          <circle cx="100" cy="100" r="66" class="v-groove"/>
-          <circle cx="100" cy="100" r="58" class="v-groove"/>
-          <circle cx="100" cy="100" r="50" class="v-groove"/>
-          <circle cx="100" cy="100" r="42" class="v-groove"/>
-          <circle cx="100" cy="100" r="30" class="v-label"/>
-          <circle cx="100" cy="100" r="3" class="v-hole"/>
-          <text class="v-text"><textPath href="#ring">RHYTHEM KALRA ✦ COO ✦ OPERATIONS LEAD ✦ CREATIVE ✦ OPERATOR ✦</textPath></text>
-        </svg>
-        <span class="vinyl-rk">rk</span>
+      <div class="hero-text">
+        <p class="label">side A · big picture ↔ details</p>
+        <h1 id="heroTitle">
+          Hi, I'm Rhythem.<br>
+          I turn ideas into <em>plans</em>, and plans into things that
+          <span class="then">actually happen.</span>
+        </h1>
+        <p class="margin-note hero-note">(with a lot of music in between)</p>
+        <p class="hero-sub">
+          MBA Tech Data Science student at NMIMS MPSTME. COO at Designare, Operations Lead
+          at Buzzinga, and a startup operator across content, community, product and creative work.
+        </p>
+        <p class="currently">
+          <span class="mono">currently thinking about:</span>
+          <span class="rotator" id="rotator">a content plan for the next launch</span>
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary magnetic" href="#initiatives">See my work</a>
+          <a class="btn btn-ghost magnetic" href="#contact">Say hi</a>
+          <button class="btn btn-dance magnetic" id="danceBtn" type="button" aria-pressed="false">
+            <span class="dance-icon" aria-hidden="true">♪</span> <span class="dance-label">make it dance</span>
+          </button>
+        </div>
       </div>
-      <p class="label">side A · big picture ↔ details</p>
-      <h1 id="heroTitle">
-        Hi, I'm Rhythem.<br>
-        I turn ideas into <em>plans</em>, and plans into things that
-        <span class="then">actually happen.</span>
-      </h1>
-      <p class="margin-note hero-note">(with a lot of music in between)</p>
-      <p class="hero-sub">
-        MBA Tech Data Science student at NMIMS MPSTME. COO at Designare, Operations Lead
-        at Buzzinga, and a startup operator across content, community, product and creative work.
-      </p>
-      <p class="currently">
-        <span class="mono">currently thinking about:</span>
-        <span class="rotator" id="rotator">a content plan for the next launch</span>
-      </p>
-      <div class="hero-cta">
-        <a class="btn btn-primary magnetic" href="#initiatives">See my work</a>
-        <a class="btn btn-ghost magnetic" href="#contact">Say hi</a>
-        <button class="btn btn-dance magnetic" id="danceBtn" type="button" aria-pressed="false">
-          <span class="dance-icon" aria-hidden="true">♪</span> <span class="dance-label">make it dance</span>
-        </button>
+
+      <div class="hero-art" id="heroArt">
+        <div class="vinyl" id="vinyl" aria-hidden="true">
+          <svg viewBox="0 0 200 200" width="200" height="200" style="max-width:100%;height:auto">
+            <defs><path id="ring" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs>
+            <circle cx="100" cy="100" r="98" class="v-disc"/>
+            <circle cx="100" cy="100" r="66" class="v-groove"/>
+            <circle cx="100" cy="100" r="58" class="v-groove"/>
+            <circle cx="100" cy="100" r="50" class="v-groove"/>
+            <circle cx="100" cy="100" r="42" class="v-groove"/>
+            <circle cx="100" cy="100" r="30" class="v-label"/>
+            <circle cx="100" cy="100" r="3" class="v-hole"/>
+            <text class="v-text"><textPath href="#ring">RHYTHEM KALRA ✦ COO ✦ OPERATIONS LEAD ✦ CREATIVE ✦ OPERATOR ✦</textPath></text>
+          </svg>
+          <span class="vinyl-rk">rk</span>
+        </div>
+        <figure class="pola pola-back" data-shuffle>
+          <span class="tape tape-a" aria-hidden="true"></span>
+          <img src="images/mirror.jpg" alt="Rhythem taking a mirror selfie against pink tiles" width="600" height="1066">
+          <figcaption>hi, it's me ✦</figcaption>
+        </figure>
+        <figure class="pola pola-front instax" data-shuffle>
+          <span class="tape tape-b" aria-hidden="true"></span>
+          <img src="images/polaroid.jpg" alt="An instant-film photo of Rhythem smiling in a blue sequinned outfit" width="640" height="770">
+        </figure>
+        <p class="margin-note art-note">(click to shuffle)</p>
       </div>
     </section>
 
@@ -118,6 +133,12 @@
           </p>
         </div>
 
+        <div class="about-side">
+          <figure class="snap">
+            <span class="tape tape-c" aria-hidden="true"></span>
+            <img src="images/cafe.jpg" alt="Rhythem smiling at a café table" width="360" height="638" loading="lazy">
+            <figcaption>off duty</figcaption>
+          </figure>
         <aside class="index-card tilt">
           <p class="card-title">index card</p>
           <dl>
@@ -128,6 +149,7 @@
             <dt>first questions I ask</dt><dd class="loop">who is it for? → why does it matter? → what does good look like?</dd>
           </dl>
         </aside>
+        </div>
       </div>
 
       <div class="stats">
@@ -358,12 +380,28 @@
     <section id="off" class="section reveal">
       <p class="label">track 05 · off the clock</p>
       <h2>The <em>very creative</em> part.</h2>
+      <div class="film" aria-label="Camera roll">
+        <div class="film-track">
+          <figure class="frame"><img src="images/paris.jpg" alt="Rhythem at the Arc de Triomphe in Paris at night" loading="lazy"><figcaption><span>01A</span>paris, after dark</figcaption></figure>
+          <figure class="frame"><img src="images/snow.jpg" alt="Rhythem in a white jacket in falling snow at night" loading="lazy"><figcaption><span>02A</span>snowfall</figcaption></figure>
+          <figure class="frame"><img src="images/cafe.jpg" alt="Rhythem smiling at a café table" loading="lazy"><figcaption><span>03A</span>café hours</figcaption></figure>
+          <figure class="frame"><img src="images/mirror.jpg" alt="Rhythem taking a mirror selfie" loading="lazy"><figcaption><span>04A</span>mirror check</figcaption></figure>
+          <figure class="frame"><img src="images/polaroid.jpg" alt="An instant-film photo of Rhythem" loading="lazy"><figcaption><span>05A</span>instax night</figcaption></figure>
+          <figure class="frame"><img src="images/paris.jpg" alt="" loading="lazy"><figcaption><span>01A</span>paris, after dark</figcaption></figure>
+          <figure class="frame"><img src="images/snow.jpg" alt="" loading="lazy"><figcaption><span>02A</span>snowfall</figcaption></figure>
+          <figure class="frame"><img src="images/cafe.jpg" alt="" loading="lazy"><figcaption><span>03A</span>café hours</figcaption></figure>
+          <figure class="frame"><img src="images/mirror.jpg" alt="" loading="lazy"><figcaption><span>04A</span>mirror check</figcaption></figure>
+          <figure class="frame"><img src="images/polaroid.jpg" alt="" loading="lazy"><figcaption><span>05A</span>instax night</figcaption></figure>
+        </div>
+      </div>
+      <p class="film-note mono">RK 400 · camera roll · hover to pause</p>
+
       <p class="hint mono">tap a card to flip it</p>
       <div class="flips">
         <button class="flip" type="button">
           <span class="flip-inner">
             <span class="flip-front"><span class="flip-icon">✈</span><span class="flip-word">travelling</span></span>
-            <span class="flip-back">New places, new ideas. I love exploring both.</span>
+            <span class="flip-back photo-back"><span>New places, new ideas. I love exploring both.</span></span>
           </span>
         </button>
         <button class="flip" type="button">
@@ -420,6 +458,6 @@
     <p class="mono">psst: press <kbd>D</kbd> · © <span id="year">2026</span> Rhythem Kalra</p>
   </footer>
 
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>

@@ -15,7 +15,7 @@ My personal portfolio: who I am, what I've built, and what I keep thinking about
 | --- | --- |
 | `index.html` | All the content and the page structure |
 | `style.css` | The look: colours, fonts, layout, the phone version |
-| `script.js` | The interactive bits: ink/paper theme toggle, "make it dance" mode (or press D), experience tabs, project filters, draggable skill stickers, flip cards, tilting cards, counting numbers, scroll progress bar, copy-email sparkles, and the music layer: sound-wave background (canvas), spinning vinyl, equalizer and the cursor ring |
+| `script.js` | The interactive bits: ink/paper theme toggle, "make it dance" mode (or press D), experience tabs, project filters, draggable skill stickers, flip cards, tilting cards, counting numbers, scroll progress bar, copy-email sparkles, the spinning vinyl, equalizer, shuffle-able photo collage, rolling film strip and the cursor ring |
 
 ## Design idea
 
@@ -26,6 +26,7 @@ margin notes are all meant to make it feel like a notebook I'm still writing in.
 
 ## Credits
 
+- All photos are my own (resized, with location data removed).
 - Fonts from [Google Fonts](https://fonts.google.com): Instrument Serif, Inter, JetBrains Mono, Caveat.
 - Written with help from Claude (Anthropic) as an AI coding assistant, as allowed by the assignment.
   The content, ideas and personality are mine.
