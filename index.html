@@ -17,11 +17,17 @@
   </script>
 </head>
 <body>
+  <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+  <canvas class="waves" id="waves" aria-hidden="true"></canvas>
   <div class="glow" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"><span class="cursor-text"></span></div>
   <div class="progress" id="progress" aria-hidden="true"></div>
 
   <header class="nav">
-    <a href="#top" class="logo" id="logo">rk<span>.</span></a>
+    <div class="brand">
+      <a href="#top" class="logo" id="logo">rk<span>.</span></a>
+      <button class="eq" id="eqBtn" type="button" aria-label="Toggle dance mode"><span></span><span></span><span></span><span></span><span></span></button>
+    </div>
     <nav class="nav-links">
       <a href="#about">About</a>
       <a href="#initiatives">Initiatives</a>
@@ -37,7 +43,22 @@
   <main id="top">
     <!-- HERO -->
     <section class="hero">
-      <p class="label">page 01 · big picture ↔ details</p>
+      <div class="bigname" id="bigname" aria-hidden="true">rhythem</div>
+      <div class="vinyl" id="vinyl" aria-hidden="true">
+        <svg viewBox="0 0 200 200">
+          <defs><path id="ring" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs>
+          <circle cx="100" cy="100" r="98" class="v-disc"/>
+          <circle cx="100" cy="100" r="66" class="v-groove"/>
+          <circle cx="100" cy="100" r="58" class="v-groove"/>
+          <circle cx="100" cy="100" r="50" class="v-groove"/>
+          <circle cx="100" cy="100" r="42" class="v-groove"/>
+          <circle cx="100" cy="100" r="30" class="v-label"/>
+          <circle cx="100" cy="100" r="3" class="v-hole"/>
+          <text class="v-text"><textPath href="#ring">RHYTHEM KALRA ✦ COO ✦ OPERATIONS LEAD ✦ CREATIVE ✦ OPERATOR ✦</textPath></text>
+        </svg>
+        <span class="vinyl-rk">rk</span>
+      </div>
+      <p class="label">side A · big picture ↔ details</p>
       <h1 id="heroTitle">
         Hi, I'm Rhythem.<br>
         I turn ideas into <em>plans</em>, and plans into things that
@@ -45,8 +66,8 @@
       </h1>
       <p class="margin-note hero-note">(with a lot of music in between)</p>
       <p class="hero-sub">
-        MBA Tech Data Science student at NMIMS MPSTME. COO at Designare, and a startup
-        operator across content, community, product and creative work.
+        MBA Tech Data Science student at NMIMS MPSTME. COO at Designare, Operations Lead
+        at Buzzinga, and a startup operator across content, community, product and creative work.
       </p>
       <p class="currently">
         <span class="mono">currently thinking about:</span>
@@ -75,7 +96,7 @@
 
     <!-- ABOUT -->
     <section id="about" class="section reveal">
-      <p class="label">01 · about</p>
+      <p class="label">track 01 · about</p>
       <div class="about-grid">
         <div class="about-text">
           <h2>Data science student. <em>Creative by default.</em></h2>
@@ -101,7 +122,7 @@
           <p class="card-title">index card</p>
           <dl>
             <dt>studying</dt><dd>MBA Tech, Data Science · NMIMS MPSTME</dd>
-            <dt>working with</dt><dd>Designare (COO) · Buzzinga</dd>
+            <dt>working with</dt><dd>Designare (COO) · Buzzinga (Operations Lead)</dd>
             <dt>on campus</dt><dd>Cultural, Analytics &amp; Sattva Fest committees</dd>
             <dt>off the clock</dt><dd>travel · dance · music · shooting content</dd>
             <dt>first questions I ask</dt><dd class="loop">who is it for? → why does it matter? → what does good look like?</dd>
@@ -119,7 +140,7 @@
 
     <!-- INITIATIVES -->
     <section id="initiatives" class="section reveal">
-      <p class="label">02 · initiatives</p>
+      <p class="label">track 02 · initiatives</p>
       <h2>Initiatives: <em>where I do the work.</em></h2>
 
       <div class="tabs" role="tablist" aria-label="Initiatives">
@@ -153,11 +174,11 @@
 
         <article class="panel" role="tabpanel" id="panel-buzzinga" aria-labelledby="tab-buzzinga" hidden>
           <div class="panel-head">
-            <h3>Buzzinga</h3>
+            <h3>Buzzinga <span class="role">OPERATIONS LEAD</span></h3>
             <span class="panel-tag">social media agency · client work</span>
           </div>
           <p>
-            At Buzzinga I take content from a brief to a plan the team can actually execute, for a
+            As Operations Lead at Buzzinga, I take content from a brief to a plan the team can actually execute, for a
             lot of very different kinds of brands. It taught me how to connect creative thinking
             with timelines, client communication and the practical work of getting content made.
           </p>
@@ -190,7 +211,7 @@
 
     <!-- PROJECTS -->
     <section id="projects" class="section reveal">
-      <p class="label">03 · projects</p>
+      <p class="label">track 03 · projects</p>
       <h2>Things I've <em>built &amp; shaped.</em></h2>
 
       <div class="filters" role="group" aria-label="Filter projects">
@@ -310,7 +331,7 @@
 
     <!-- SKILLS -->
     <section id="skills" class="section reveal">
-      <p class="label">04 · skills &amp; strengths</p>
+      <p class="label">track 04 · skills &amp; strengths</p>
       <h2>What I bring <em>to the table.</em></h2>
       <p class="margin-note board-note">psst, you can drag these around ↓</p>
       <div class="board" id="board">
@@ -335,7 +356,7 @@
 
     <!-- OFF THE CLOCK -->
     <section id="off" class="section reveal">
-      <p class="label">05 · off the clock</p>
+      <p class="label">track 05 · off the clock</p>
       <h2>The <em>very creative</em> part.</h2>
       <p class="hint mono">tap a card to flip it</p>
       <div class="flips">
@@ -368,7 +389,7 @@
 
     <!-- HOW I WORK -->
     <section id="notebook" class="section reveal">
-      <p class="label">06 · how I work</p>
+      <p class="label">track 06 · how I work</p>
       <h2>Notes from <em>the margin.</em></h2>
       <div class="notes">
         <blockquote class="note">Useful, honest, human. Before I start: who is it for, why does it matter, and what does good look like?</blockquote>
@@ -380,7 +401,7 @@
 
     <!-- CONTACT -->
     <section id="contact" class="section contact reveal">
-      <p class="label">07 · contact</p>
+      <p class="label">track 07 · contact</p>
       <h2>Got an idea that needs a plan <em>and some energy?</em></h2>
       <p class="contact-sub">Projects, content, communities, or just a good conversation. My inbox is open.</p>
       <div class="contact-row">

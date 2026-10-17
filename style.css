@@ -805,3 +805,167 @@ kbd {
   *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
   .js .reveal { opacity: 1; transform: none; }
 }
+
+/* ===========================================================
+   THE "RHYTHM" LAYER: sound waves, aurora, vinyl, equalizer,
+   giant outlined name and a cursor that talks.
+   =========================================================== */
+
+:root, :root[data-theme="ink"] { --accent-3: #ff5d8f; --blend: screen; --aurora-o: 0.85; }
+:root[data-theme="paper"] { --accent-3: #db2777; --blend: multiply; --aurora-o: 0.35; }
+
+/* drifting colour blobs */
+.aurora { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.aurora span {
+  position: absolute;
+  width: 70vmax;
+  height: 70vmax;
+  border-radius: 50%;
+  opacity: var(--aurora-o);
+  mix-blend-mode: var(--blend);
+  animation: drift 28s ease-in-out infinite alternate;
+}
+.aurora span:nth-child(1) { top: -35vmax; left: -25vmax; background: radial-gradient(circle, color-mix(in srgb, var(--accent) 40%, transparent), transparent 62%); }
+.aurora span:nth-child(2) { top: 10vh; right: -35vmax; background: radial-gradient(circle, color-mix(in srgb, var(--accent-2) 38%, transparent), transparent 62%); animation-duration: 34s; animation-delay: -8s; }
+.aurora span:nth-child(3) { bottom: -40vmax; left: 20vw; background: radial-gradient(circle, color-mix(in srgb, var(--accent-3) 26%, transparent), transparent 62%); animation-duration: 40s; animation-delay: -16s; }
+@keyframes drift {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(12vw, 8vh) scale(1.15); }
+  100% { transform: translate(-6vw, 14vh) scale(0.95); }
+}
+
+/* sound-wave canvas */
+.waves { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
+
+/* equalizer next to the logo */
+.brand { display: flex; align-items: center; gap: 14px; }
+.eq {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 18px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.eq span {
+  width: 3px;
+  height: 100%;
+  border-radius: 2px;
+  background: var(--accent);
+  transform-origin: bottom;
+  animation: eq 1.1s ease-in-out infinite;
+}
+.eq span:nth-child(2) { animation-delay: -0.3s; animation-duration: 0.9s; }
+.eq span:nth-child(3) { animation-delay: -0.6s; animation-duration: 1.3s; background: var(--accent-2); }
+.eq span:nth-child(4) { animation-delay: -0.2s; animation-duration: 0.8s; }
+.eq span:nth-child(5) { animation-delay: -0.5s; animation-duration: 1.2s; background: var(--accent-3); }
+.dancing .eq span { animation-duration: 0.32s; }
+@keyframes eq { 0%, 100% { transform: scaleY(0.2); } 50% { transform: scaleY(1); } }
+
+/* hero: giant outlined name + vinyl */
+.hero { position: relative; overflow-x: clip; }
+.hero > *:not(.bigname):not(.vinyl) { position: relative; z-index: 1; }
+.bigname {
+  position: absolute;
+  left: 50%;
+  bottom: -0.08em;
+  transform: translateX(calc(-50% + var(--shift, 0px)));
+  font-family: "Instrument Serif", serif;
+  font-style: italic;
+  font-size: 26vw;
+  line-height: 0.8;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 1.2px color-mix(in srgb, var(--text) 24%, transparent);
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+.vinyl {
+  position: absolute;
+  right: clamp(16px, 5vw, 56px);
+  bottom: 15%;
+  width: clamp(170px, 20vw, 270px);
+  aspect-ratio: 1;
+  z-index: 0;
+  filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.45));
+}
+.vinyl svg { width: 100%; height: 100%; animation: spin 16s linear infinite; }
+.dancing .vinyl svg { animation-duration: 1.6s; }
+.v-disc { fill: #0c0b0a; stroke: rgba(255, 255, 255, 0.08); }
+.v-groove { fill: none; stroke: rgba(255, 255, 255, 0.07); }
+.v-label { fill: var(--accent); }
+.v-hole { fill: #0c0b0a; }
+.v-text { font: 500 9.4px "JetBrains Mono", monospace; letter-spacing: 1.6px; fill: #ede6d6; }
+.vinyl-rk {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font: italic 400 clamp(18px, 2.2vw, 30px) "Instrument Serif", serif;
+  color: var(--accent-ink);
+  pointer-events: none;
+}
+
+/* hand-drawn squiggle under the coloured words in headings */
+h2 em {
+  padding-bottom: 0.1em;
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  background-size: 22px 7px;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='7' viewBox='0 0 22 7'><path d='M0 3.5 Q5.5 0 11 3.5 T22 3.5' fill='none' stroke='%23f2b14a' stroke-width='1.4' stroke-linecap='round'/></svg>");
+}
+[data-theme="paper"] h2 em {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='7' viewBox='0 0 22 7'><path d='M0 3.5 Q5.5 0 11 3.5 T22 3.5' fill='none' stroke='%23c2410c' stroke-width='1.4' stroke-linecap='round'/></svg>");
+}
+
+/* a cursor ring that grows and says what things do (desktop only) */
+.cursor-ring {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 34px;
+  height: 34px;
+  margin: -17px 0 0 -17px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 300;
+  display: none;
+  place-items: center;
+  transition: width 0.25s, height 0.25s, margin 0.25s, background 0.25s, border-color 0.25s;
+}
+.has-cursor .cursor-ring { display: grid; }
+.cursor-ring.big {
+  width: 76px;
+  height: 76px;
+  margin: -38px 0 0 -38px;
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  backdrop-filter: blur(2px);
+}
+.cursor-ring.link { width: 54px; height: 54px; margin: -27px 0 0 -27px; border-color: var(--accent-2); }
+.cursor-text { font: 500 11px "JetBrains Mono", monospace; color: var(--accent); opacity: 0; transition: opacity 0.2s; }
+.cursor-ring.big .cursor-text { opacity: 1; }
+
+/* hero headline: the coloured word shimmers between the three accents */
+.hero h1 em .ch { animation: shimmer 6s ease-in-out infinite; animation-delay: calc(var(--i) * 80ms); }
+@keyframes shimmer {
+  0%, 100% { color: var(--accent); }
+  33% { color: var(--accent-3); }
+  66% { color: var(--accent-2); }
+}
+.dancing .hero h1 em .ch { animation: bob 0.7s ease-in-out infinite, shimmer 1.5s linear infinite; animation-delay: calc(var(--i) * -45ms); }
+
+@media (max-width: 860px) {
+  .vinyl {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    align-self: flex-end;
+    width: 150px;
+    margin-top: 36px;
+  }
+  .bigname { font-size: 34vw; bottom: 0; }
+}
