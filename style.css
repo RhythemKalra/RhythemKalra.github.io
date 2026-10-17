@@ -626,6 +626,7 @@ h2 { font-size: clamp(36px, 5.5vw, 60px); margin-bottom: 40px; max-width: 18ch; 
   font-size: 24px;
   line-height: 1.2;
 }
+.c-role { display: block; margin-top: 10px; font: 400 14px "Inter", sans-serif; color: var(--muted); line-height: 1.5; }
 .c-num { display: block; font: 400 12px "JetBrains Mono", monospace; color: var(--accent); margin-bottom: 12px; }
 
 .role {
