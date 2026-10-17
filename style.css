@@ -628,6 +628,21 @@ h2 { font-size: clamp(36px, 5.5vw, 60px); margin-bottom: 40px; max-width: 18ch; 
 }
 .c-num { display: block; font: 400 12px "JetBrains Mono", monospace; color: var(--accent); margin-bottom: 12px; }
 
+.role {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font: 600 13px "JetBrains Mono", monospace;
+  letter-spacing: 0.08em;
+  background: var(--accent-2);
+  color: #fff;
+  transform: rotate(-4deg) translateY(-4px);
+  box-shadow: 0 6px 20px -8px var(--accent-2);
+}
+.panel-plain { background: none; box-shadow: none; padding: 0; }
+
 /* ---------- project filters ---------- */
 .filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
 .filter {

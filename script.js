@@ -127,16 +127,19 @@ function moveIndicator(tab) {
   indicator.style.width = tab.offsetWidth + "px";
   indicator.style.height = tab.offsetHeight + "px";
 }
-tabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    tabs.forEach((other) => {
-      const active = other === tab;
-      other.classList.toggle("active", active);
-      other.setAttribute("aria-selected", active);
-      document.getElementById(other.getAttribute("aria-controls")).hidden = !active;
-    });
-    moveIndicator(tab);
+function activateTab(tab) {
+  tabs.forEach((other) => {
+    const active = other === tab;
+    other.classList.toggle("active", active);
+    other.setAttribute("aria-selected", active);
+    document.getElementById(other.getAttribute("aria-controls")).hidden = !active;
   });
+  moveIndicator(tab);
+}
+tabs.forEach((tab) => tab.addEventListener("click", () => activateTab(tab)));
+// links like the "Projects" nav item jump to the section and open a specific tab
+document.querySelectorAll("[data-open-tab]").forEach((link) => {
+  link.addEventListener("click", () => activateTab(document.getElementById(link.dataset.openTab)));
 });
 moveIndicator(document.querySelector(".tab.active"));
 window.addEventListener("resize", () => moveIndicator(document.querySelector(".tab.active")));

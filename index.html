@@ -24,8 +24,8 @@
     <a href="#top" class="logo" id="logo">rk<span>.</span></a>
     <nav class="nav-links">
       <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
+      <a href="#initiatives">Initiatives</a>
+      <a href="#initiatives" data-open-tab="tab-projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -45,15 +45,15 @@
       </h1>
       <p class="margin-note hero-note">(with a lot of music in between)</p>
       <p class="hero-sub">
-        MBA Tech Data Science student at NMIMS MPSTME. Startup operator across
-        content, community, product and creative work.
+        MBA Tech Data Science student at NMIMS MPSTME. COO at Designare, and a startup
+        operator across content, community, product and creative work.
       </p>
       <p class="currently">
         <span class="mono">currently thinking about:</span>
         <span class="rotator" id="rotator">a content plan for the next launch</span>
       </p>
       <div class="hero-cta">
-        <a class="btn btn-primary magnetic" href="#experience">See my work</a>
+        <a class="btn btn-primary magnetic" href="#initiatives">See my work</a>
         <a class="btn btn-ghost magnetic" href="#contact">Say hi</a>
         <button class="btn btn-dance magnetic" id="danceBtn" type="button" aria-pressed="false">
           <span class="dance-icon" aria-hidden="true">♪</span> <span class="dance-label">make it dance</span>
@@ -101,7 +101,7 @@
           <p class="card-title">index card</p>
           <dl>
             <dt>studying</dt><dd>MBA Tech, Data Science · NMIMS MPSTME</dd>
-            <dt>working with</dt><dd>Designare · Buzzinga</dd>
+            <dt>working with</dt><dd>Designare (COO) · Buzzinga</dd>
             <dt>on campus</dt><dd>Cultural, Analytics &amp; Satwa Fest committees</dd>
             <dt>off the clock</dt><dd>travel · dance · music · shooting content</dd>
             <dt>first questions I ask</dt><dd class="loop">who is it for? → why does it matter? → what does good look like?</dd>
@@ -117,26 +117,27 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section reveal">
-      <p class="label">02 · experience</p>
-      <h2>Where I <em>do the work.</em></h2>
+    <!-- INITIATIVES -->
+    <section id="initiatives" class="section reveal">
+      <p class="label">02 · initiatives</p>
+      <h2>Initiatives: <em>where I do the work.</em></h2>
 
-      <div class="tabs" role="tablist" aria-label="Experience">
+      <div class="tabs" role="tablist" aria-label="Initiatives">
         <button class="tab active" role="tab" aria-selected="true" aria-controls="panel-designare" id="tab-designare">Designare</button>
         <button class="tab" role="tab" aria-selected="false" aria-controls="panel-buzzinga" id="tab-buzzinga">Buzzinga</button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-nmims" id="tab-nmims">NMIMS committees</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-nmims" id="tab-nmims">College committees</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-projects" id="tab-projects">Projects</button>
         <span class="tab-indicator" aria-hidden="true"></span>
       </div>
 
       <div class="panels">
         <article class="panel" role="tabpanel" id="panel-designare" aria-labelledby="tab-designare">
           <div class="panel-head">
-            <h3>Designare</h3>
+            <h3>Designare <span class="role">COO</span></h3>
             <span class="panel-tag">design community startup · 150K+ followers</span>
           </div>
           <p>
-            A design community with a following of more than 150,000 people. My work here has been
+            A design community with a following of more than 150,000 people. As COO, my work is
             about turning ideas into organised activity: coordinating people and follow-ups,
             supporting programmes and events, talking to the community, and moving initiatives
             from planning to delivery.
@@ -172,8 +173,8 @@
 
         <article class="panel" role="tabpanel" id="panel-nmims" aria-labelledby="tab-nmims" hidden>
           <div class="panel-head">
-            <h3>NMIMS MPSTME</h3>
-            <span class="panel-tag">campus life · separate from my startup work</span>
+            <h3>College committees</h3>
+            <span class="panel-tag">NMIMS MPSTME · separate from my startup work</span>
           </div>
           <p>
             Alongside college and work, I'm part of three committees on campus. It's where I get to
@@ -185,97 +186,128 @@
             <div class="committee tilt"><span class="c-num">iii</span>Satwa Fest Committee</div>
           </div>
         </article>
-      </div>
-    </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section reveal">
-      <p class="label">03 · selected projects</p>
-      <h2>Things I've <em>built &amp; shaped.</em></h2>
-
-      <div class="filters" role="group" aria-label="Filter projects">
-        <button class="filter active" data-filter="all">all</button>
-        <button class="filter" data-filter="data">data</button>
-        <button class="filter" data-filter="product">product</button>
-        <button class="filter" data-filter="ai">AI</button>
-      </div>
-
-      <div class="projects">
-        <article class="project tilt" data-cat="data">
-          <div class="project-head">
-            <span class="num">01</span>
-            <span class="tag">full-stack · data</span>
+        <div class="panel panel-plain" role="tabpanel" id="panel-projects" aria-labelledby="tab-projects" hidden>
+          <div class="filters" role="group" aria-label="Filter projects">
+            <button class="filter active" data-filter="all">all</button>
+            <button class="filter" data-filter="content">content</button>
+            <button class="filter" data-filter="product">product</button>
+            <button class="filter" data-filter="data">data</button>
+            <button class="filter" data-filter="ai">AI</button>
           </div>
-          <h3>Zestreet</h3>
-          <p class="sub">global street food intelligence platform</p>
-          <p>
-            A full-stack street food analytics dashboard built on a structured MySQL database of
-            <b>4,259 dishes across 11 countries</b>. Interactive data visualisation and filtered
-            dish exploration, with logged-in create / edit / delete management, all in one
-            single-page app.
-          </p>
-          <ul class="chips">
-            <li>MySQL</li><li>data visualisation</li><li>CRUD</li><li>authentication</li><li>single-page app</li>
-          </ul>
-        </article>
 
-        <article class="project tilt" data-cat="product">
-          <div class="project-head">
-            <span class="num">02</span>
-            <span class="tag">team project · product</span>
-          </div>
-          <h3>OrbitOS</h3>
-          <p class="sub">one workspace for projects &amp; content workflows</p>
-          <p>
-            A team-built workspace concept for coordinating projects and content. Task management,
-            scheduling, campaign coordination, collaboration and progress visibility, all in one
-            product.
-          </p>
-          <ul class="chips">
-            <li>Next.js 14</li><li>React</li><li>TypeScript</li><li>Tailwind CSS</li>
-          </ul>
-        </article>
+          <div class="projects">
+            <article class="project tilt" data-cat="content">
+              <div class="project-head">
+                <span class="num">01</span>
+                <span class="tag">Buzzinga · Designare · content</span>
+              </div>
+              <h3>Content for brands</h3>
+              <p class="sub">from brief → strategy → script → shoot</p>
+              <p>
+                Content strategy, scripting and shoots for a lot of different kinds of brands.
+                Reels, carousels and static posts planned around campaigns, launches and seasonal
+                moments, plus reel ideas, scripts, copy and announcements for the Designare community.
+              </p>
+              <ul class="chips">
+                <li>content strategy</li><li>scripting</li><li>copywriting</li><li>shoots</li><li>campaign planning</li>
+              </ul>
+            </article>
 
-        <article class="project tilt" data-cat="product">
-          <div class="project-head">
-            <span class="num">03</span>
-            <span class="tag">app concept · product design</span>
-          </div>
-          <h3>Nurtura</h3>
-          <p class="sub">a calm, senior-friendly app</p>
-          <p>
-            An app concept presented as a product walkthrough, built around a calm experience
-            for older users. The sign-in screen has a simpler mode for seniors, with voice
-            assistance.
-          </p>
-          <ul class="chips">
-            <li>product thinking</li><li>accessibility</li><li>voice assistance</li><li>walkthrough</li>
-          </ul>
-        </article>
+            <article class="project tilt" data-cat="product">
+              <div class="project-head">
+                <span class="num">02</span>
+                <span class="tag">Designare · product</span>
+              </div>
+              <h3>Dazzle</h3>
+              <p class="sub">a product we're building at Designare</p>
+              <p>
+                Where I get to do product thinking and product management: working out what the
+                product should be and who it's for, and helping the team turn that into something
+                that actually gets built.
+              </p>
+              <ul class="chips">
+                <li>product thinking</li><li>product management</li><li>team coordination</li>
+              </ul>
+            </article>
 
-        <article class="project tilt" data-cat="ai">
-          <div class="project-head">
-            <span class="num">04</span>
-            <span class="tag">college team project · AI</span>
+            <article class="project tilt" data-cat="data">
+              <div class="project-head">
+                <span class="num">03</span>
+                <span class="tag">full-stack · data</span>
+              </div>
+              <h3>Zestreet</h3>
+              <p class="sub">global street food intelligence platform</p>
+              <p>
+                A full-stack street food analytics dashboard built on a structured MySQL database of
+                <b>4,259 dishes across 11 countries</b>. Interactive data visualisation and filtered
+                dish exploration, with logged-in create / edit / delete management, all in one
+                single-page app.
+              </p>
+              <ul class="chips">
+                <li>MySQL</li><li>data visualisation</li><li>CRUD</li><li>authentication</li><li>single-page app</li>
+              </ul>
+            </article>
+
+            <article class="project tilt" data-cat="product">
+              <div class="project-head">
+                <span class="num">04</span>
+                <span class="tag">team project · product</span>
+              </div>
+              <h3>OrbitOS</h3>
+              <p class="sub">one workspace for projects &amp; content workflows</p>
+              <p>
+                A team-built workspace concept for coordinating projects and content. Task management,
+                scheduling, campaign coordination, collaboration and progress visibility, all in one
+                product.
+              </p>
+              <ul class="chips">
+                <li>Next.js 14</li><li>React</li><li>TypeScript</li><li>Tailwind CSS</li>
+              </ul>
+            </article>
+
+            <article class="project tilt" data-cat="product">
+              <div class="project-head">
+                <span class="num">05</span>
+                <span class="tag">app concept · product design</span>
+              </div>
+              <h3>Nurtura</h3>
+              <p class="sub">a calm, senior-friendly app</p>
+              <p>
+                An app concept presented as a product walkthrough, built around a calm experience
+                for older users. The sign-in screen has a simpler mode for seniors, with voice
+                assistance.
+              </p>
+              <ul class="chips">
+                <li>product thinking</li><li>accessibility</li><li>voice assistance</li><li>walkthrough</li>
+              </ul>
+            </article>
+
+            <article class="project tilt" data-cat="ai">
+              <div class="project-head">
+                <span class="num">06</span>
+                <span class="tag">college team project · AI</span>
+              </div>
+              <h3>Multi-agent AI model</h3>
+              <p class="sub">resume ↔ job matching with cooperating agents</p>
+              <p>
+                A college team project exploring an agentic model made of multiple AI agents that
+                read a resume and a job description, score the match and suggest improvements. We
+                built and ran it locally, and I explored what it would take to deploy it for other
+                people to use.
+              </p>
+              <ul class="flow" aria-label="How the agents work together">
+                <li>Parser</li><li>Scorer</li><li>Critic</li><li>Rewriter</li>
+              </ul>
+            </article>
           </div>
-          <h3>Multi-agent AI model</h3>
-          <p class="sub">resume ↔ job matching with cooperating agents</p>
-          <p>
-            A college team project exploring an agentic model made of multiple AI agents that
-            read a resume and a job description, score the match and suggest improvements. We
-            built and ran it locally, and I explored what it would take to deploy it for other
-            people to use.
-          </p>
-          <ul class="flow" aria-label="How the agents work together">
-            <li>Parser</li><li>Scorer</li><li>Critic</li><li>Rewriter</li>
-          </ul>
-        </article>
+        </div>
       </div>
     </section>
 
     <!-- SKILLS -->
     <section id="skills" class="section reveal">
-      <p class="label">04 · skills &amp; strengths</p>
+      <p class="label">03 · skills &amp; strengths</p>
       <h2>What I bring <em>to the table.</em></h2>
       <p class="margin-note board-note">psst, you can drag these around ↓</p>
       <div class="board" id="board">
@@ -300,7 +332,7 @@
 
     <!-- OFF THE CLOCK -->
     <section id="off" class="section reveal">
-      <p class="label">05 · off the clock</p>
+      <p class="label">04 · off the clock</p>
       <h2>The <em>very creative</em> part.</h2>
       <p class="hint mono">tap a card to flip it</p>
       <div class="flips">
@@ -333,7 +365,7 @@
 
     <!-- HOW I WORK -->
     <section id="notebook" class="section reveal">
-      <p class="label">06 · how I work</p>
+      <p class="label">05 · how I work</p>
       <h2>Notes from <em>the margin.</em></h2>
       <div class="notes">
         <blockquote class="note">Useful, honest, human. Before I start: who is it for, why does it matter, and what does good look like?</blockquote>
@@ -345,7 +377,7 @@
 
     <!-- CONTACT -->
     <section id="contact" class="section contact reveal">
-      <p class="label">07 · contact</p>
+      <p class="label">06 · contact</p>
       <h2>Got an idea that needs a plan <em>and some energy?</em></h2>
       <p class="contact-sub">Projects, content, communities, or just a good conversation. My inbox is open.</p>
       <div class="contact-row">
