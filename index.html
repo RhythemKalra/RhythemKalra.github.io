@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rhythem Kalra</title>
-  <meta name="description" content="Rhythem Kalra: data science student at NMIMS, operator, and someone building things before fully understanding them.">
+  <meta name="description" content="Rhythem Kalra: MBA Tech Data Science student at NMIMS MPSTME and startup operator across content, community, product and creative work.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23141210'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-style='italic' font-size='34' fill='%23f2b14a'>rk</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,14 +18,15 @@
 </head>
 <body>
   <div class="glow" aria-hidden="true"></div>
+  <div class="progress" id="progress" aria-hidden="true"></div>
 
   <header class="nav">
-    <a href="#top" class="logo">rk<span>.</span></a>
+    <a href="#top" class="logo" id="logo">rk<span>.</span></a>
     <nav class="nav-links">
       <a href="#about">About</a>
-      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
-      <a href="#notebook">Notebook</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="theme-toggle" id="themeToggle" aria-label="Switch between dark and light mode">
@@ -36,150 +37,237 @@
   <main id="top">
     <!-- HERO -->
     <section class="hero">
-      <p class="label">page 01 · still figuring it out</p>
-      <h1>
+      <p class="label">page 01 · big picture ↔ details</p>
+      <h1 id="heroTitle">
         Hi, I'm Rhythem.<br>
-        I build things <em>before</em> I fully understand them.
-        <span class="then">Then I figure them out.</span>
+        I turn ideas into <em>plans</em>, and plans into things that
+        <span class="then">actually happen.</span>
       </h1>
-      <p class="margin-note hero-note">this website included ↓</p>
+      <p class="margin-note hero-note">(with a lot of music in between)</p>
       <p class="hero-sub">
-        Data science student at NMIMS. Operator at heart.
-        Somewhere in the middle of AI, design and community.
+        MBA Tech Data Science student at NMIMS MPSTME. Startup operator across
+        content, community, product and creative work.
       </p>
       <p class="currently">
-        <span class="mono">currently figuring out:</span>
-        <span class="rotator" id="rotator">how AI changes creative work</span>
+        <span class="mono">currently thinking about:</span>
+        <span class="rotator" id="rotator">a content plan for the next launch</span>
       </p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="#work">See what I've built</a>
-        <a class="btn btn-ghost" href="#contact">Say hi</a>
+        <a class="btn btn-primary magnetic" href="#experience">See my work</a>
+        <a class="btn btn-ghost magnetic" href="#contact">Say hi</a>
+        <button class="btn btn-dance magnetic" id="danceBtn" type="button" aria-pressed="false">
+          <span class="dance-icon" aria-hidden="true">♪</span> <span class="dance-label">make it dance</span>
+        </button>
       </div>
     </section>
+
+    <!-- TICKER -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>content strategy</span><span>scripting for brands</span><span>community</span><span>events</span>
+        <span>product thinking</span><span>sales planning</span><span>shooting content</span><span>data science</span>
+        <span>AI &amp; agentic systems</span><span>campaign planning</span>
+        <span>content strategy</span><span>scripting for brands</span><span>community</span><span>events</span>
+        <span>product thinking</span><span>sales planning</span><span>shooting content</span><span>data science</span>
+        <span>AI &amp; agentic systems</span><span>campaign planning</span>
+      </div>
+    </div>
 
     <!-- ABOUT -->
     <section id="about" class="section reveal">
       <p class="label">01 · about</p>
       <div class="about-grid">
         <div class="about-text">
-          <h2>Not a clean path. <em>A real one.</em></h2>
+          <h2>Data science student. <em>Creative by default.</em></h2>
           <p>
-            I'm doing an integrated BTech + MBA Tech in Data Science at NMIMS MPSTME. But a big
-            chunk of my college life has happened outside the classroom, inside startups and
-            communities, doing whatever needed doing: sales, operations, events, partnerships,
-            marketing.
+            I'm studying Data Science, but the things that excite me most sit where it meets
+            everything else: AI and agentic systems, design, content and community. I'm curious
+            about how technology changes the way people work, and how analytical thinking can
+            sit right next to creative work.
           </p>
           <p>
-            I didn't follow the "study, graduate, get a job" order. I'm building things while still
-            figuring out college, career and who I want to become. That's messy, and honestly
-            it's the most interesting part.
+            Alongside college, I work with startups in the design and social media space. That has
+            put me close to operations, sales, growth, community, events, product and a lot of
+            content. I enjoy work that brings different people and disciplines together,
+            especially when an idea needs both a clear plan <em>and</em> the energy to make it real.
           </p>
           <p>
-            What I care about: how AI changes the way people create and work, communities that
-            actually feel like communities, and doing work where I know <em>why</em> it matters.
+            Off the clock I'm travelling, dancing, listening to music or shooting something.
+            I learn by getting involved and figuring things out as I go.
           </p>
         </div>
 
-        <aside class="index-card">
+        <aside class="index-card tilt">
           <p class="card-title">index card</p>
           <dl>
-            <dt>studying</dt><dd>BTech + MBA Tech, Data Science · NMIMS MPSTME</dd>
-            <dt>work</dt><dd>Designare · Buzzinga</dd>
-            <dt>building</dt><dd>an AI video editor with Claude Code</dd>
-            <dt>how I learn</dt><dd class="loop">do → break → ask → fix → understand → do again</dd>
-            <dt>question I keep asking</dt><dd>"wait, why are we doing it this way?"</dd>
+            <dt>studying</dt><dd>MBA Tech, Data Science · NMIMS MPSTME</dd>
+            <dt>working with</dt><dd>Designare · Buzzinga</dd>
+            <dt>on campus</dt><dd>Cultural, Analytics &amp; Satwa Fest committees</dd>
+            <dt>off the clock</dt><dd>travel · dance · music · shooting content</dd>
+            <dt>first questions I ask</dt><dd class="loop">who is it for? → why does it matter? → what does good look like?</dd>
           </dl>
         </aside>
       </div>
+
+      <div class="stats">
+        <div class="stat"><span class="stat-num" data-count="150" data-suffix="K+">0</span><span class="stat-label">people in the Designare design community</span></div>
+        <div class="stat"><span class="stat-num" data-count="2">0</span><span class="stat-label">startups: a design community &amp; a social media agency</span></div>
+        <div class="stat"><span class="stat-num" data-count="3">0</span><span class="stat-label">NMIMS committees</span></div>
+        <div class="stat"><span class="stat-num" data-count="4259" data-format="comma">0</span><span class="stat-label">dishes mapped in my Zestreet project</span></div>
+      </div>
     </section>
 
-    <!-- WORK -->
-    <section id="work" class="section reveal">
-      <p class="label">02 · work &amp; projects</p>
-      <h2>Things I've <em>built, run</em> and broken.</h2>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section reveal">
+      <p class="label">02 · experience</p>
+      <h2>Where I <em>do the work.</em></h2>
+
+      <div class="tabs" role="tablist" aria-label="Experience">
+        <button class="tab active" role="tab" aria-selected="true" aria-controls="panel-designare" id="tab-designare">Designare</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-buzzinga" id="tab-buzzinga">Buzzinga</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-nmims" id="tab-nmims">NMIMS committees</button>
+        <span class="tab-indicator" aria-hidden="true"></span>
+      </div>
+
+      <div class="panels">
+        <article class="panel" role="tabpanel" id="panel-designare" aria-labelledby="tab-designare">
+          <div class="panel-head">
+            <h3>Designare</h3>
+            <span class="panel-tag">design community startup · 150K+ followers</span>
+          </div>
+          <p>
+            A design community with a following of more than 150,000 people. My work here has been
+            about turning ideas into organised activity: coordinating people and follow-ups,
+            supporting programmes and events, talking to the community, and moving initiatives
+            from planning to delivery.
+          </p>
+          <ul class="bullets">
+            <li><b>Operations:</b> keeping people, follow-ups and timelines moving</li>
+            <li><b>Sales &amp; growth:</b> sales planning and helping initiatives grow</li>
+            <li><b>Community, events &amp; workshops:</b> running activity people actually show up for</li>
+            <li><b>Partnerships:</b> working with the people and brands around the community</li>
+            <li><b>Content:</b> reel ideas, scripts, copy and community announcements</li>
+            <li><b>Product:</b> product thinking and product management on <span class="hl">Dazzle</span>, a product we're building at Designare</li>
+          </ul>
+        </article>
+
+        <article class="panel" role="tabpanel" id="panel-buzzinga" aria-labelledby="tab-buzzinga" hidden>
+          <div class="panel-head">
+            <h3>Buzzinga</h3>
+            <span class="panel-tag">social media agency · client work</span>
+          </div>
+          <p>
+            At Buzzinga I take content from a brief to a plan the team can actually execute, for a
+            lot of very different kinds of brands. It taught me how to connect creative thinking
+            with timelines, client communication and the practical work of getting content made.
+          </p>
+          <ul class="bullets">
+            <li><b>Content strategy:</b> planning content around campaigns, launches and seasonal moments</li>
+            <li><b>Scripting &amp; copy:</b> ideas, scripts and copy for reels, carousels and static posts</li>
+            <li><b>Shooting:</b> shooting content for brands</li>
+            <li><b>Client coordination:</b> meeting actionables, next steps, feedback and approvals</li>
+            <li><b>Teamwork:</b> coordinating between creative and account teams to get work into production</li>
+          </ul>
+        </article>
+
+        <article class="panel" role="tabpanel" id="panel-nmims" aria-labelledby="tab-nmims" hidden>
+          <div class="panel-head">
+            <h3>NMIMS MPSTME</h3>
+            <span class="panel-tag">campus life · separate from my startup work</span>
+          </div>
+          <p>
+            Alongside college and work, I'm part of three committees on campus. It's where I get to
+            work with teams on things beyond coursework and contribute to campus life.
+          </p>
+          <div class="committees">
+            <div class="committee tilt"><span class="c-num">i</span>Cultural Committee</div>
+            <div class="committee tilt"><span class="c-num">ii</span>Analytics (Data Science) Committee</div>
+            <div class="committee tilt"><span class="c-num">iii</span>Satwa Fest Committee</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section reveal">
+      <p class="label">03 · selected projects</p>
+      <h2>Things I've <em>built &amp; shaped.</em></h2>
+
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button class="filter active" data-filter="all">all</button>
+        <button class="filter" data-filter="data">data</button>
+        <button class="filter" data-filter="product">product</button>
+        <button class="filter" data-filter="ai">AI</button>
+      </div>
 
       <div class="projects">
-        <article class="project featured">
+        <article class="project tilt" data-cat="data">
           <div class="project-head">
             <span class="num">01</span>
-            <span class="tag">class project · applied AI</span>
+            <span class="tag">full-stack · data</span>
           </div>
-          <h3>Multi-agent resume matcher</h3>
+          <h3>Zestreet</h3>
+          <p class="sub">global street food intelligence platform</p>
           <p>
-            Four AI agents that read a resume and a job description, score the match, reason about
-            <em>why</em> it falls short, and rewrite the resume, looping until a critic is satisfied.
-            The part I'm proudest of: it's not allowed to invent skills you don't have.
-            That rule is enforced in code, not just hoped for.
+            A full-stack street food analytics dashboard built on a structured MySQL database of
+            <b>4,259 dishes across 11 countries</b>. Interactive data visualisation and filtered
+            dish exploration, with logged-in create / edit / delete management, all in one
+            single-page app.
+          </p>
+          <ul class="chips">
+            <li>MySQL</li><li>data visualisation</li><li>CRUD</li><li>authentication</li><li>single-page app</li>
+          </ul>
+        </article>
+
+        <article class="project tilt" data-cat="product">
+          <div class="project-head">
+            <span class="num">02</span>
+            <span class="tag">team project · product</span>
+          </div>
+          <h3>OrbitOS</h3>
+          <p class="sub">one workspace for projects &amp; content workflows</p>
+          <p>
+            A team-built workspace concept for coordinating projects and content. Task management,
+            scheduling, campaign coordination, collaboration and progress visibility, all in one
+            product.
+          </p>
+          <ul class="chips">
+            <li>Next.js 14</li><li>React</li><li>TypeScript</li><li>Tailwind CSS</li>
+          </ul>
+        </article>
+
+        <article class="project tilt" data-cat="product">
+          <div class="project-head">
+            <span class="num">03</span>
+            <span class="tag">app concept · product design</span>
+          </div>
+          <h3>Nurtura</h3>
+          <p class="sub">a calm, senior-friendly app</p>
+          <p>
+            An app concept presented as a product walkthrough, built around a calm experience
+            for older users. The sign-in screen has a simpler mode for seniors, with voice
+            assistance.
+          </p>
+          <ul class="chips">
+            <li>product thinking</li><li>accessibility</li><li>voice assistance</li><li>walkthrough</li>
+          </ul>
+        </article>
+
+        <article class="project tilt" data-cat="ai">
+          <div class="project-head">
+            <span class="num">04</span>
+            <span class="tag">college team project · AI</span>
+          </div>
+          <h3>Multi-agent AI model</h3>
+          <p class="sub">resume ↔ job matching with cooperating agents</p>
+          <p>
+            A college team project exploring an agentic model made of multiple AI agents that
+            read a resume and a job description, score the match and suggest improvements. We
+            built and ran it locally, and I explored what it would take to deploy it for other
+            people to use.
           </p>
           <ul class="flow" aria-label="How the agents work together">
             <li>Parser</li><li>Scorer</li><li>Critic</li><li>Rewriter</li>
-          </ul>
-          <ul class="chips">
-            <li>Python</li><li>scikit-learn</li><li>k-means</li><li>logistic regression</li><li>rule engine</li><li>live streaming UI</li>
-          </ul>
-        </article>
-
-        <article class="project">
-          <div class="project-head">
-            <span class="num">02</span>
-            <span class="tag">side project · AI</span>
-          </div>
-          <h3>An AI video editor</h3>
-          <p>
-            A Claude Code workspace that edits talking-head videos for me. It transcribes the
-            footage, cuts silences and retakes, adds motion graphics, and exports both an MP4
-            and an editable timeline for Final Cut or DaVinci Resolve.
-          </p>
-          <ul class="chips">
-            <li>Claude Code</li><li>Whisper</li><li>FFmpeg</li><li>Remotion</li><li>Python</li>
-          </ul>
-        </article>
-
-        <article class="project">
-          <div class="project-head">
-            <span class="num">03</span>
-            <span class="tag">work · design community</span>
-          </div>
-          <h3>Designare</h3>
-          <p>
-            Where I learned what building a startup actually feels like. I've worked across
-            sales and sales leadership, the founder's office, operations, events, partnerships
-            and growth, helping run workshops and community events for designers.
-          </p>
-          <ul class="chips">
-            <li>Fontober</li><li>Design Fusion</li><li>Pixel Party</li><li>Motionare</li><li>AI Catalyst</li><li>Career Maxxing</li><li>Freelance Playbook</li>
-          </ul>
-        </article>
-
-        <article class="project">
-          <div class="project-head">
-            <span class="num">04</span>
-            <span class="tag">work · community &amp; social</span>
-          </div>
-          <h3>Buzzinga</h3>
-          <p>
-            Client social media and community management: WhatsApp and Discord communities,
-            event promotion, SOPs and reporting. It taught me the hard way that a group chat
-            isn't a community, and that posting more rarely fixes a quiet one.
-          </p>
-          <ul class="chips">
-            <li>community strategy</li><li>content</li><li>client comms</li><li>SOPs</li>
-          </ul>
-        </article>
-
-        <article class="project">
-          <div class="project-head">
-            <span class="num">05</span>
-            <span class="tag">coursework · data science</span>
-          </div>
-          <h3>ML &amp; time-series labs</h3>
-          <p>
-            The less glamorous, very real part: weekly Python notebooks for machine learning
-            and time-series analysis. Forecasting, smoothing, random walks, and a lot of
-            "why is this error happening" before it clicks.
-          </p>
-          <ul class="chips">
-            <li>Python</li><li>Jupyter</li><li>pandas</li><li>forecasting</li>
           </ul>
         </article>
       </div>
@@ -187,53 +275,82 @@
 
     <!-- SKILLS -->
     <section id="skills" class="section reveal">
-      <p class="label">03 · skills &amp; interests</p>
+      <p class="label">04 · skills &amp; strengths</p>
       <h2>What I bring <em>to the table.</em></h2>
-      <div class="skills-grid">
-        <div class="skill-col">
-          <h3>Things I do</h3>
-          <ul>
-            <li>Operations</li><li>Sales</li><li>Community building</li><li>Events &amp; workshops</li>
-            <li>Partnerships</li><li>Marketing &amp; content</li>
-          </ul>
-        </div>
-        <div class="skill-col">
-          <h3>Things I build with</h3>
-          <ul>
-            <li>Python</li><li>scikit-learn &amp; pandas</li><li>Jupyter</li>
-            <li>Claude Code &amp; AI agents</li><li>HTML, CSS, JavaScript</li>
-          </ul>
-        </div>
-        <div class="skill-col">
-          <h3>Things I'm into</h3>
-          <ul>
-            <li>AI × creativity</li><li>Design &amp; branding</li><li>Why communities work (or don't)</li>
-            <li>Startups</li><li>Figuring out my twenties</li>
-          </ul>
-        </div>
+      <p class="margin-note board-note">psst, you can drag these around ↓</p>
+      <div class="board" id="board">
+        <span class="sticker s1">content strategy</span>
+        <span class="sticker s2">scripting for brands</span>
+        <span class="sticker s3">shooting content</span>
+        <span class="sticker s4">startup operations</span>
+        <span class="sticker s5">sales planning &amp; growth</span>
+        <span class="sticker s1">community building</span>
+        <span class="sticker s2">events &amp; workshops</span>
+        <span class="sticker s3">product thinking</span>
+        <span class="sticker s4">product management</span>
+        <span class="sticker s5">campaign planning</span>
+        <span class="sticker s1">client coordination</span>
+        <span class="sticker s2">team coordination &amp; leadership</span>
+        <span class="sticker s3">data science &amp; analytics</span>
+        <span class="sticker s4">AI &amp; agentic systems</span>
+        <span class="sticker s5">creative problem-solving</span>
+        <span class="sticker s1">learning tools hands-on</span>
       </div>
     </section>
 
-    <!-- NOTEBOOK -->
+    <!-- OFF THE CLOCK -->
+    <section id="off" class="section reveal">
+      <p class="label">05 · off the clock</p>
+      <h2>The <em>very creative</em> part.</h2>
+      <p class="hint mono">tap a card to flip it</p>
+      <div class="flips">
+        <button class="flip" type="button">
+          <span class="flip-inner">
+            <span class="flip-front"><span class="flip-icon">✈</span><span class="flip-word">travelling</span></span>
+            <span class="flip-back">New places, new ideas. I love exploring both.</span>
+          </span>
+        </button>
+        <button class="flip" type="button">
+          <span class="flip-inner">
+            <span class="flip-front"><span class="flip-icon">♪</span><span class="flip-word">dancing</span></span>
+            <span class="flip-back">Hit "make it dance" at the top of the page. You'll get it.</span>
+          </span>
+        </button>
+        <button class="flip" type="button">
+          <span class="flip-inner">
+            <span class="flip-front"><span class="flip-icon">◎</span><span class="flip-word">music</span></span>
+            <span class="flip-back">Always listening to something.</span>
+          </span>
+        </button>
+        <button class="flip" type="button">
+          <span class="flip-inner">
+            <span class="flip-front"><span class="flip-icon">▶</span><span class="flip-word">shooting content</span></span>
+            <span class="flip-back">For brands at work, and just for fun when I'm not.</span>
+          </span>
+        </button>
+      </div>
+    </section>
+
+    <!-- HOW I WORK -->
     <section id="notebook" class="section reveal">
-      <p class="label">04 · notes from the margin</p>
-      <h2>Things I keep <em>thinking about.</em></h2>
+      <p class="label">06 · how I work</p>
+      <h2>Notes from <em>the margin.</em></h2>
       <div class="notes">
-        <blockquote class="note">I don't think I hate execution. I hate execution without ownership.</blockquote>
-        <blockquote class="note">A WhatsApp group isn't a community.</blockquote>
-        <blockquote class="note">If AI can do X, what becomes more valuable for humans?</blockquote>
-        <blockquote class="note">Maybe being confused at 20 isn't a bug.</blockquote>
+        <blockquote class="note">Useful, honest, human. Before I start: who is it for, why does it matter, and what does good look like?</blockquote>
+        <blockquote class="note">I'd rather ask one direct question than move ahead on an assumption.</blockquote>
+        <blockquote class="note">Communication should sound like a real person talking to the actual audience.</blockquote>
+        <blockquote class="note">Bring structure to the discussion, make the next steps clear, keep the momentum going.</blockquote>
       </div>
     </section>
 
     <!-- CONTACT -->
     <section id="contact" class="section contact reveal">
-      <p class="label">05 · contact</p>
-      <h2>Let's talk about something <em>you're figuring out.</em></h2>
-      <p class="contact-sub">Ideas, projects, communities, or just a good question. My inbox is open.</p>
+      <p class="label">07 · contact</p>
+      <h2>Got an idea that needs a plan <em>and some energy?</em></h2>
+      <p class="contact-sub">Projects, content, communities, or just a good conversation. My inbox is open.</p>
       <div class="contact-row">
-        <a class="btn btn-primary" href="mailto:rhythemkalra@gmail.com">rhythemkalra@gmail.com</a>
-        <button class="btn btn-ghost" id="copyEmail" type="button">copy email</button>
+        <a class="btn btn-primary magnetic" href="mailto:rhythemkalra@gmail.com">rhythemkalra@gmail.com</a>
+        <button class="btn btn-ghost magnetic" id="copyEmail" type="button">copy email</button>
       </div>
       <ul class="socials">
         <li><a href="https://github.com/RhythemKalra" target="_blank" rel="noopener">GitHub ↗</a></li>
@@ -244,7 +361,7 @@
 
   <footer class="footer">
     <p>Hand-coded in HTML, CSS &amp; JavaScript, with Claude as my pair programmer.</p>
-    <p class="mono">© <span id="year">2026</span> Rhythem Kalra</p>
+    <p class="mono">psst: press <kbd>D</kbd> · © <span id="year">2026</span> Rhythem Kalra</p>
   </footer>
 
   <script src="script.js"></script>

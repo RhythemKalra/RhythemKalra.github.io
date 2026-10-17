@@ -15,7 +15,7 @@ My personal portfolio: who I am, what I've built, and what I keep thinking about
 | --- | --- |
 | `index.html` | All the content and the page structure |
 | `style.css` | The look: colours, fonts, layout, the phone version |
-| `script.js` | The small interactive bits: the ink/paper theme toggle, the "currently figuring out" line, the cursor glow, the scroll fade-ins and the copy-email button |
+| `script.js` | The interactive bits: ink/paper theme toggle, "make it dance" mode (or press D), experience tabs, project filters, draggable skill stickers, flip cards, tilting cards, counting numbers, scroll progress bar and copy-email sparkles |
 
 ## Design idea
 
