@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en" data-theme="ink">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rhythem Kalra</title>
+  <meta name="description" content="Rhythem Kalra: data science student at NMIMS, operator, and someone building things before fully understanding them.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23141210'/><text x='50%25' y='56%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-style='italic' font-size='34' fill='%23f2b14a'>rk</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Apply the saved theme before the page paints, so it never flashes.
+    document.documentElement.classList.add("js");
+    try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="#top" class="logo">rk<span>.</span></a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#notebook">Notebook</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Switch between dark and light mode">
+      <span class="tt-ink">ink</span><span class="tt-track"><span class="tt-dot"></span></span><span class="tt-paper">paper</span>
+    </button>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <p class="label">page 01 · still figuring it out</p>
+      <h1>
+        Hi, I'm Rhythem.<br>
+        I build things <em>before</em> I fully understand them.
+        <span class="then">Then I figure them out.</span>
+      </h1>
+      <p class="margin-note hero-note">this website included ↓</p>
+      <p class="hero-sub">
+        Data science student at NMIMS. Operator at heart.
+        Somewhere in the middle of AI, design and community.
+      </p>
+      <p class="currently">
+        <span class="mono">currently figuring out:</span>
+        <span class="rotator" id="rotator">how AI changes creative work</span>
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#work">See what I've built</a>
+        <a class="btn btn-ghost" href="#contact">Say hi</a>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section reveal">
+      <p class="label">01 · about</p>
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>Not a clean path. <em>A real one.</em></h2>
+          <p>
+            I'm doing an integrated BTech + MBA Tech in Data Science at NMIMS MPSTME. But a big
+            chunk of my college life has happened outside the classroom, inside startups and
+            communities, doing whatever needed doing: sales, operations, events, partnerships,
+            marketing.
+          </p>
+          <p>
+            I didn't follow the "study, graduate, get a job" order. I'm building things while still
+            figuring out college, career and who I want to become. That's messy, and honestly
+            it's the most interesting part.
+          </p>
+          <p>
+            What I care about: how AI changes the way people create and work, communities that
+            actually feel like communities, and doing work where I know <em>why</em> it matters.
+          </p>
+        </div>
+
+        <aside class="index-card">
+          <p class="card-title">index card</p>
+          <dl>
+            <dt>studying</dt><dd>BTech + MBA Tech, Data Science · NMIMS MPSTME</dd>
+            <dt>work</dt><dd>Designare · Buzzinga</dd>
+            <dt>building</dt><dd>an AI video editor with Claude Code</dd>
+            <dt>how I learn</dt><dd class="loop">do → break → ask → fix → understand → do again</dd>
+            <dt>question I keep asking</dt><dd>"wait, why are we doing it this way?"</dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="section reveal">
+      <p class="label">02 · work &amp; projects</p>
+      <h2>Things I've <em>built, run</em> and broken.</h2>
+
+      <div class="projects">
+        <article class="project featured">
+          <div class="project-head">
+            <span class="num">01</span>
+            <span class="tag">class project · applied AI</span>
+          </div>
+          <h3>Multi-agent resume matcher</h3>
+          <p>
+            Four AI agents that read a resume and a job description, score the match, reason about
+            <em>why</em> it falls short, and rewrite the resume, looping until a critic is satisfied.
+            The part I'm proudest of: it's not allowed to invent skills you don't have.
+            That rule is enforced in code, not just hoped for.
+          </p>
+          <ul class="flow" aria-label="How the agents work together">
+            <li>Parser</li><li>Scorer</li><li>Critic</li><li>Rewriter</li>
+          </ul>
+          <ul class="chips">
+            <li>Python</li><li>scikit-learn</li><li>k-means</li><li>logistic regression</li><li>rule engine</li><li>live streaming UI</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <span class="num">02</span>
+            <span class="tag">side project · AI</span>
+          </div>
+          <h3>An AI video editor</h3>
+          <p>
+            A Claude Code workspace that edits talking-head videos for me. It transcribes the
+            footage, cuts silences and retakes, adds motion graphics, and exports both an MP4
+            and an editable timeline for Final Cut or DaVinci Resolve.
+          </p>
+          <ul class="chips">
+            <li>Claude Code</li><li>Whisper</li><li>FFmpeg</li><li>Remotion</li><li>Python</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <span class="num">03</span>
+            <span class="tag">work · design community</span>
+          </div>
+          <h3>Designare</h3>
+          <p>
+            Where I learned what building a startup actually feels like. I've worked across
+            sales and sales leadership, the founder's office, operations, events, partnerships
+            and growth, helping run workshops and community events for designers.
+          </p>
+          <ul class="chips">
+            <li>Fontober</li><li>Design Fusion</li><li>Pixel Party</li><li>Motionare</li><li>AI Catalyst</li><li>Career Maxxing</li><li>Freelance Playbook</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <span class="num">04</span>
+            <span class="tag">work · community &amp; social</span>
+          </div>
+          <h3>Buzzinga</h3>
+          <p>
+            Client social media and community management: WhatsApp and Discord communities,
+            event promotion, SOPs and reporting. It taught me the hard way that a group chat
+            isn't a community, and that posting more rarely fixes a quiet one.
+          </p>
+          <ul class="chips">
+            <li>community strategy</li><li>content</li><li>client comms</li><li>SOPs</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <div class="project-head">
+            <span class="num">05</span>
+            <span class="tag">coursework · data science</span>
+          </div>
+          <h3>ML &amp; time-series labs</h3>
+          <p>
+            The less glamorous, very real part: weekly Python notebooks for machine learning
+            and time-series analysis. Forecasting, smoothing, random walks, and a lot of
+            "why is this error happening" before it clicks.
+          </p>
+          <ul class="chips">
+            <li>Python</li><li>Jupyter</li><li>pandas</li><li>forecasting</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section reveal">
+      <p class="label">03 · skills &amp; interests</p>
+      <h2>What I bring <em>to the table.</em></h2>
+      <div class="skills-grid">
+        <div class="skill-col">
+          <h3>Things I do</h3>
+          <ul>
+            <li>Operations</li><li>Sales</li><li>Community building</li><li>Events &amp; workshops</li>
+            <li>Partnerships</li><li>Marketing &amp; content</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h3>Things I build with</h3>
+          <ul>
+            <li>Python</li><li>scikit-learn &amp; pandas</li><li>Jupyter</li>
+            <li>Claude Code &amp; AI agents</li><li>HTML, CSS, JavaScript</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h3>Things I'm into</h3>
+          <ul>
+            <li>AI × creativity</li><li>Design &amp; branding</li><li>Why communities work (or don't)</li>
+            <li>Startups</li><li>Figuring out my twenties</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTEBOOK -->
+    <section id="notebook" class="section reveal">
+      <p class="label">04 · notes from the margin</p>
+      <h2>Things I keep <em>thinking about.</em></h2>
+      <div class="notes">
+        <blockquote class="note">I don't think I hate execution. I hate execution without ownership.</blockquote>
+        <blockquote class="note">A WhatsApp group isn't a community.</blockquote>
+        <blockquote class="note">If AI can do X, what becomes more valuable for humans?</blockquote>
+        <blockquote class="note">Maybe being confused at 20 isn't a bug.</blockquote>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact reveal">
+      <p class="label">05 · contact</p>
+      <h2>Let's talk about something <em>you're figuring out.</em></h2>
+      <p class="contact-sub">Ideas, projects, communities, or just a good question. My inbox is open.</p>
+      <div class="contact-row">
+        <a class="btn btn-primary" href="mailto:rhythemkalra@gmail.com">rhythemkalra@gmail.com</a>
+        <button class="btn btn-ghost" id="copyEmail" type="button">copy email</button>
+      </div>
+      <ul class="socials">
+        <li><a href="https://github.com/RhythemKalra" target="_blank" rel="noopener">GitHub ↗</a></li>
+        <!-- LINKEDIN -->
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Hand-coded in HTML, CSS &amp; JavaScript, with Claude as my pair programmer.</p>
+    <p class="mono">© <span id="year">2026</span> Rhythem Kalra</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
